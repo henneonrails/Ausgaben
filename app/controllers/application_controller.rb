@@ -8,5 +8,9 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
-  database_naem = "ausgaben"
+  def database_name
+    "ausgaben"
+  end
+
+ 
 end

@@ -1,0 +1,27 @@
+
+
+  <h1>Haushaltsbuch</h1>
+
+  <div id="main">
+
+    <table>
+      <tr>
+        <th>Datum</th>
+        <th>Kategorie</th>
+        <th>Ausgabe</th>
+
+      </tr>
+
+      <% @haushalt.rows.each do |haushalt| %>
+
+          <tr>
+            <td> <%= haushalt.datum %> </td>
+            <td> <%= haushalt.kategorie %> </td>
+            <td> <%= haushalt.betrag %> </td>
+          </tr>
+
+      <% end %>
+
+    </table>
+
+  </div>

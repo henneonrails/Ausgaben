@@ -1,0 +1,23 @@
+body {
+  background-color: #FFF;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+#container {
+  width: 680px;
+  margin: 0 auto;
+}
+
+#main {
+  width: 500px;
+  float: left;
+}
+
+#side {
+  margin-left: 530px;
+  width: 150px;
+  color: #333;
+  font-size: 11px;
+  padding-top: 20px;
+}
