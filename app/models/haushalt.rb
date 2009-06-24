@@ -1,0 +1,4 @@
+class Haushalt < BasicModel
+
+  
+end
