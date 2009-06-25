@@ -18,6 +18,9 @@ Rails::Initializer.run do |config|
    config.gem "couchrest"
    config.gem "json"
    config.gem "couchapp"
+   config.gem "rspec", :lib => false
+   config.gem "rspec-rails", :lib => false
+
 
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"

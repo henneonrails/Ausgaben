@@ -1,0 +1,24 @@
+#main
+  %h1 Eintrag ändern
+
+  %table
+    - form_for @haushalt do |f|
+      %tr
+        %td
+          Datum
+        %td
+          =f.text_field :datum
+      %tr
+        %td
+          Kategorie
+        %td
+          =f.text_field :kategorie
+        %td
+          Betrag
+        %td
+          =f.text_field :betrag
+      %tr
+        %td
+          =f.submit "Speichern"
+
+  %p= link_to 'Zurück', haushalts_path

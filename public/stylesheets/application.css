@@ -9,6 +9,22 @@ body {
   margin: 0 auto;
 }
 
+#flash_notice {
+  font-size: 11px;
+  background-color: #CFC;
+  border: solid 1px #6C6;
+  padding: 5px 8px;
+  margin-top: 10px;
+}
+
+#flash_error {
+  font-size: 11px;
+  background-color: #FCC;
+  border: solid 1px #C66;
+  padding: 5px 8px;
+  margin-top: 10px;
+}
+
 #main {
   width: 500px;
   float: left;
