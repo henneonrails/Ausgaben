@@ -20,6 +20,7 @@ Rails::Initializer.run do |config|
    config.gem "couchapp"
    config.gem "rspec", :lib => false
    config.gem "rspec-rails", :lib => false
+   config.gem "authlogic"
 
 
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"

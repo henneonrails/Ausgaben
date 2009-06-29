@@ -1,7 +1,7 @@
 body {
   background-color: #FFF;
   font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #container {
@@ -39,6 +39,16 @@ body {
 	font-variant: normal;
 	line-height: 1.5;
 }
+
+#main th {
+	padding: 0 0.5em;
+	text-align: left;
+	}
+	
+#main td {
+	border-bottom: 1px solid #CCC;
+	padding: 0 0.5em;
+	}
 
 #side {
   margin-left: 530px;
