@@ -2,8 +2,9 @@
   %h1 Eintrag ändern
 
   %table
-    - form_for @haushalt do |f|
+    - form_for @haushalt, :url => {:action => "update"}, :html=> {:method => :put} do |f|
       %tr
+        =f.text_field :rev
         %td
           Datum
         %td

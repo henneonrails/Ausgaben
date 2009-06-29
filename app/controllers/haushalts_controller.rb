@@ -1,25 +1,28 @@
 class HaushaltsController < ApplicationController
   def index
-    @haushalt = Haushalt.view(database_name, 'datum/datum')
+    @haushalt = Haushalt.all
+    #@haushalt = Haushalt.view(database_name, 'datum/datum')
   end
 
   def new
-    @haushalt = Haushalt.new(database_name)
+    @haushalt = Haushalt.new
   end
 
   def edit
-    @haushalt = Haushalt.find(database_name, params[:id])
+    @haushalt = Haushalt.get(params[:id])
   end
 
   def create
-    haushalt = Haushalt.new(database_name)
-    haushalt.save(params[:haushalt])
+    h = Haushalt.new
+    h.merge!(params[:haushalt])
+    h.save
     redirect_to haushalts_path
   end
 
   def update
-    @haushalt = Haushalt.find(database_name, params[:id])
-    @haushalt.save(params[:haushalt])
+    @haus = Haushalt.get(params[:id])
+    @haus.merge!(params[:haushalt])
+    @haus.save
     redirect_to haushalts_path  
   end
 end

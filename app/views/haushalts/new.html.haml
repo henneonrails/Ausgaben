@@ -4,7 +4,7 @@
   %h1 Neuer Eintrag
 
   %table
-    - form_for @haushalt do |f|
+    - form_for :haushalt, @haushalt, :url => {:action => "create"}, :html=> {:method => :post} do |f|
       %tr
         %td
           Datum

@@ -12,17 +12,21 @@
 
       </tr>
 
-      <% @haushalt.rows.each do |haushalt| %>
+      <% @haushalt.each do |haushalt| %>
 
           <tr>
             <td> <%= haushalt.datum %> </td>
             <td> <%= haushalt.kategorie %> </td>
             <td> <%= number_to_currency(haushalt.betrag, :unit=>' ') %> </td>
-            <td> <%= link_to 'edit', edit_haushalt_path(haushalt) %></td>
+            <td> <%= link_to 'edit', edit_haushalt_path(haushalt.id) %></td>
           </tr>
 
       <% end %>
-
+          <tr>
+            <td> Summe </td>
+            <td></td>
+            <td> <%= number_to_currency(Haushalt.summe, :unit=>' ') %> </td>
+          </tr>
     </table>
 
     <%= link_to "Neuer Eintrag", new_haushalt_path %>
