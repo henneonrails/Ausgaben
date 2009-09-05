@@ -9,6 +9,17 @@ body {
   margin: 0 auto;
   background-color: #f4edca;
 	padding: 10px;
+	font: 16px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#container input[type="text"]
+{
+	font-family: Arial, Sans-Serif;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+    padding: 4px;
+    border: solid 1px #85b1de;
 }
 
 #flash_notice {
@@ -56,4 +67,9 @@ body {
   color: #333;
   font-size: 11px;
   padding-top: 20px;
+}
+#user_nav {
+	
+  float: right;
+	font: small-caps 12px "Lucida Grande", Lucida, Verdana, sans-serif;
 }

@@ -1,7 +1,7 @@
 class HaushaltsController < ApplicationController
   def index
-    @haushalt = Haushalt.all
-    #@haushalt = Haushalt.view(database_name, 'datum/datum')
+    @haushalt = db.view Haushalt.all(:key => current_user.id) if current_user
+    
   end
 
   def new
@@ -9,20 +9,36 @@ class HaushaltsController < ApplicationController
   end
 
   def edit
-    @haushalt = Haushalt.get(params[:id])
+    @haushalt = db.load params[:id]
   end
 
   def create
-    h = Haushalt.new
-    h.merge!(params[:haushalt])
-    h.save
+    @haushalt = Haushalt.new params[:haushalt]
+    @haushalt.user = current_user.id
+    db.save(@haushalt)
+    redirect_to haushalts_path
+  end
+
+  def destroy
+    @haushalt = db.load params[:id]
+    db.destroy @haushalt
     redirect_to haushalts_path
   end
 
   def update
-    @haus = Haushalt.get(params[:id])
-    @haus.merge!(params[:haushalt])
-    @haus.save
-    redirect_to haushalts_path  
+    @haus = db.load params[:id]
+    @haus.attributes = params[:haushalt]  
+    if db.save(@haus)
+      redirect_to haushalts_path
+    else
+      render 'edit'
+    end
+
+  end
+
+  private
+
+  def db
+    CouchPotato.database
   end
 end

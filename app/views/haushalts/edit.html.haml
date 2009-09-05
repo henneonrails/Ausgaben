@@ -1,10 +1,10 @@
+- title 'Haushaltsbuch'
 #main
   %h1 Eintrag ändern
 
   %table
-    - form_for @haushalt, :url => {:action => "update"}, :html=> {:method => :put} do |f|
+    - form_for @haushalt do |f|
       %tr
-        =f.text_field :rev
         %td
           Datum
         %td
@@ -13,11 +13,11 @@
         %td
           Kategorie
         %td
-          =f.text_field :kategorie
+          =f.text_field :kategorie, :size => 8
         %td
           Betrag
         %td
-          =f.text_field :betrag
+          =f.text_field :betrag, :size => 6
       %tr
         %td
           =f.submit "Speichern"

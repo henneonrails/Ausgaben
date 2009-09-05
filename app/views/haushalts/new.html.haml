@@ -9,16 +9,16 @@
         %td
           Datum
         %td
-          =f.text_field :datum
+          =f.text_field :datum, :size => 10
       %tr
         %td
           Kategorie
         %td
-          =f.text_field :kategorie
+          =f.text_field :kategorie, :size => 10
         %td
           Betrag
         %td
-          =f.text_field :betrag
+          =f.text_field :betrag, :size => 8
       %tr
         %td
           =f.submit "Speichern"

@@ -1,7 +1,9 @@
 
 
-  <h1>Haushaltsbuch</h1>
+ <% title 'Haushalt' %>
 
+ <h1> Haushalt </h1>
+ <% if current_user %>
   <div id="main">
 
     <table>
@@ -17,18 +19,21 @@
           <tr>
             <td> <%= haushalt.datum %> </td>
             <td> <%= haushalt.kategorie %> </td>
-            <td> <%= number_to_currency(haushalt.betrag, :unit=>' ') %> </td>
+            <td> <%= number_to_currency(haushalt.betrag, :separator => ',',:unit=>' ') %> </td>
             <td> <%= link_to 'edit', edit_haushalt_path(haushalt.id) %></td>
+            <td> <%= link_to image_tag("/images/delete.gif") , haushalt_path(haushalt.id), :method => :delete %></td>
+
           </tr>
 
       <% end %>
           <tr>
             <td> Summe </td>
             <td></td>
-            <td> <%= number_to_currency(Haushalt.summe, :unit=>' ') %> </td>
+            <td> <%= number_to_currency(Haushalt.summe(current_user.id), :separator => ',',:unit=>' ') %> </td>
           </tr>
     </table>
 
     <%= link_to "Neuer Eintrag", new_haushalt_path %>
 
   </div>
+<% end %>

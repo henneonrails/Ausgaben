@@ -1,28 +1,24 @@
-COUCHSERVER = CouchRest.new
-COUCHSERVER.default_database = 'ausgaben'
-
-
-class Haushalt < CouchRest::ExtendedDocument
-  use_database COUCHSERVER.default_database
-
+class Haushalt 
+  include CouchPotato::Persistence
+  
   property :betrag
   property :kategorie
   property :datum
-  timestamps!
+  property :user
 
-  view_by :datum
+ 
+  
+  view :all, :key => :user
+  view :by_id, :key => :_id
 
-
-
-
-
-def self.summe
-  @aktuelle = Haushalt.all
+def self.summe(userid)
+  @aktuelle = CouchPotato.database.view Haushalt.all(:key => userid)
   @summe = 0
   @aktuelle.collect(&:betrag).each do |betr|
     @summe = betr.to_f + @summe
   end
   @summe
 end
-  
+
+
 end
