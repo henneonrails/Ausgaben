@@ -3,8 +3,8 @@
 <html>
   <head>
     <title><%= h(yield(:title) || "Haushaltsbuch") %></title>
-    <%= stylesheet_link_tag 'application' %>
-    <%# javascript_include_tag 'jquery', 'application', :cache => true %>
+    <%= stylesheet_link_tag 'application', 'jquery' %>
+    <%= javascript_include_tag 'jquery', 'jquery-ui', 'ui.datepicker-de', 'application', :cache => true %>
     <%= yield(:head) %>
   </head>
   <body>
