@@ -2,14 +2,18 @@ body {
   background-color: #FFF;
   font-family: Verdana, Helvetica, Arial;
   font-size: 16px;
+  -moz-border-radius:3ex;
+  -webkit-border-radius:3ex;
 }
 
 #container {
   width: 680px;
   margin: 0 auto;
   background-color: #f4edca;
-	padding: 10px;
-	font: 16px "Lucida Grande", Lucida, Verdana, sans-serif;
+  padding: 10px;
+  font: 16px "Lucida Grande", Lucida, Verdana, sans-serif;
+  -moz-border-radius:3ex;
+  -webkit-border-radius:3ex;
 }
 
 #container input[type="text"]
@@ -41,7 +45,10 @@ body {
 #main {
   width: 500px;
   float: left;
-	background-color: #efeeff;
+  background-color: rgba(213,208,177,0.9);
+  -moz-border-radius:3ex;
+  -webkit-border-radius:3ex;
+	padding: 10px;
 }
 
 #main table {
@@ -57,9 +64,10 @@ body {
 	}
 	
 #main td {
-	border-bottom: 1px solid #CCC;
+	border-bottom: 1px solid;
 	padding: 0 0.5em;
-	}
+	border-color: #aca88e;
+}
 
 #side {
   margin-left: 530px;
@@ -71,5 +79,5 @@ body {
 #user_nav {
 	
   float: right;
-	font: small-caps 12px "Lucida Grande", Lucida, Verdana, sans-serif;
+  font: small-caps 12px "Lucida Grande", Lucida, Verdana, sans-serif;
 }
